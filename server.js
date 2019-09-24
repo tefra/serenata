@@ -13,8 +13,10 @@ const handleConnection = (conn) => {
       conn.write(utils.fetchRandomSample());
       conn.end();
       rawData = '';
+      console.log('server responding to %s: %j', remoteAddress, d);
+    } else {
+      console.log('buffering connection data from %s: %j', remoteAddress, d);
     }
-    console.log('connection data from %s: %j', remoteAddress, d);
   };
 
   const onConnClose = () => {
