@@ -1,5 +1,6 @@
 const path = require('path');
 const fs = require('fs');
+const libxmljs = require('libxmljs');
 
 const samplesDirectory = path.join(__dirname, 'samples');
 const samples = fs.readdirSync(samplesDirectory);
@@ -11,6 +12,16 @@ const fetchRandomSample = () => {
   return fs.readFileSync(file).toString();
 };
 
+const isValidXml = (text) => {
+  try {
+    libxmljs.parseXml(text);
+  } catch (e) {
+    return false;
+  }
+  return true;
+};
+
 module.exports = {
   fetchRandomSample,
+  isValidXml
 };

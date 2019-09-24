@@ -1,15 +1,20 @@
 const net = require('net');
 const utils = require('./utils.js');
-
 const server = net.createServer();
 
 const handleConnection = (conn) => {
   const remoteAddress = `${conn.remoteAddress}:${conn.remotePort}`;
   console.log('new client connection from %s', remoteAddress);
+  let rawData = '';
 
   const onConnData = (d) => {
+    rawData += d;
+    if (utils.isValidXml(rawData)) {
+      conn.write(utils.fetchRandomSample());
+      conn.end();
+      rawData = '';
+    }
     console.log('connection data from %s: %j', remoteAddress, d);
-    conn.write(utils.fetchRandomSample());
   };
 
   const onConnClose = () => {
