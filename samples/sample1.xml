@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sirena>
+    <answer>
+        <pricing results="all">
+            <variant seance="TCH" et_blanks="true">
+                <fics>
+                    <fic>cash</fic>
+                </fics>
+                <flight>
+                    <company>S7</company>
+                    <num>52</num>
+                    <origin>SVX</origin>
+                    <destination>DME</destination>
+                    <deptdate delay="0">07.10.19</deptdate>
+                    <arrvdate delay="0">07.10.19</arrvdate>
+                    <depttime>06:10</depttime>
+                    <arrvtime>06:40</arrvtime>
+                    <class>O</class>
+                    <subclass cabin="Y">O</subclass>
+                    <airplane>319</airplane>
+                    <price passenger-id="3" code="ААА" count="1" currency="RUB" ticket="0000000000" ticket_cpn="1" baggage="NO" fc="1,1,1,1" doc_type="ticket" doc_id="-1,3,1,0" accode="421" validating_company="S7" fop="CA" brand="S7.S7SM.Y.1.YBS" orig_code="ААА" orig_id="0">
+                        <vat fare="537.82" zz="30.83"/>
+                        <fare remark="SBSC" fare_expdate="2019-08-08 11:41" code="OBSOW" base_code="OBSOW">4400.00</fare>
+                        <tax code="ZZ" owner="aircompany">185.00</tax>
+                        <tax code="YQ" owner="aircompany">50.00</tax>
+                        <tax code="YR" owner="aircompany">1300.00</tax>
+                        <tax code="RI" owner="aircompany">100.00</tax>
+                        <tax code="RI" owner="aircompany">66.00</tax>
+                        <upt>MjIgc...</upt>
+                        <cat18_text>S7 ONLY/NON-REF/CHNG/RESTR</cat18_text>
+                        <total>6101.00</total>
+                    </price>
+                    <price passenger-id="4" code="ААА" count="1" currency="RUB" ticket="0000000001" ticket_cpn="1" baggage="NO" fc="1,1,1,1" doc_type="ticket" doc_id="-1,4,1,0" accode="421" validating_company="S7" fop="CA" brand="S7.S7SM.Y.1.YBS" orig_code="ААА" orig_id="0">
+                        <vat fare="537.82" zz="30.83"/>
+                        <fare remark="SBSC" fare_expdate="2019-08-08 11:41" code="OBSOW" base_code="OBSOW">4400.00</fare>
+                        <tax code="RI" owner="aircompany">66.00</tax>
+                        <tax code="RI" owner="aircompany">100.00</tax>
+                        <tax code="YR" owner="aircompany">1300.00</tax>
+                        <tax code="YQ" owner="aircompany">50.00</tax>
+                        <tax code="ZZ" owner="aircompany">185.00</tax>
+                        <upt>MjIgc...</upt>
+                        <cat18_text>S7 ONLY/NON-REF/CHNG/RESTR</cat18_text>
+                        <total>6101.00</total>
+                    </price>
+                </flight>
+                <utc_timelimit>09:12 05.08.2019</utc_timelimit>
+                <variant_total currency="RUB">12202.00</variant_total>
+            </variant>
+            <brand_info id="S7.S7SM.Y.1.YBS">
+                <brand_code>YBS</brand_code>
+                <brand_tier>1</brand_tier>
+                <brand_name lang="en">BASIC ECONOMY</brand_name>
+                <brand_remark lang="ru">//0B5/C/PRERESERVED SEAT ASSIGNMENT//
+                    //04D/C/UPGRADE TO BUSINESS//
+                    //0BV/C/SEAT ASSIGNMENT EXTRA SPACE//
+                    //06I/C/CHANGE BEFORE DEPARTURE//
+                    //06J/C/CHANGE AFTER DEPARTURE//
+                    //06K/N/REFUND BEFORE DEPARTURE//
+                    //06L/N/REFUND AFTER DEPARTURE//
+                    //0AT/F/SNACK//
+                    //02M/C/SPECIAL MEAL//
+                    //03P/N/PRIORITY CHECK IN//
+                    //029/N/FAST TRACK//
+                    //057/F/MILEAGE ACCRUAL//
+                    //0MJ/F/CARRY ON UPTO 10KG AND 115CM//
+                    //0J0/C/BAG UPTO 23KG AND 203CM//</brand_remark>
+                <program_code>S7SM</program_code>
+                <program_name lang="en">SMART CHOICE</program_name>
+                <svcs>
+                    <svc service_type="F" rfisc="0B5" status="paid">
+                        <description lang="en">PRE RESERVED SEAT ASSIGNMENT (0B5)</description>
+                    </svc>
+                    <svc service_type="Z" rfisc="050" status="paid">
+                        <description lang="en">SEAT SELECTION DURING CHECK IN (050)</description>
+                    </svc>
+                    <svc service_type="F" rfisc="0BX" status="no">
+                        <description lang="en">LOUNGE ACCESS (0BX)</description>
+                    </svc>
+                    <svc service_type="F" rfisc="04D" status="paid">
+                        <description lang="en">UPGRADE TO BUSINESS (04D)</description>
+                    </svc>
+                    ...
+                    <svc service_type="C" rfisc="0FN" status="no">
+                        <description lang="en">UPTO70LB 32KG AND80LI 203LCM (0FN)</description>
+                    </svc>
+                </svcs>
+            </brand_info>
+        </pricing>
+    </answer>
+</sirena>
