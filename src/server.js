@@ -12,10 +12,10 @@ const handleConnection = (conn) => {
     if (utils.isValidXml(rawData)) {
       conn.write(utils.fetchRandomSample());
       conn.end();
+      console.log('server responding to %s: %s', remoteAddress, rawData.toString());
       rawData = '';
-      console.log('server responding to %s: %j', remoteAddress, d);
     } else {
-      console.log('buffering connection data from %s: %j', remoteAddress, d);
+      console.log('buffering connection data from %s: %s', remoteAddress, d);
     }
   };
 

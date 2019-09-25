@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  serenata:
+    build:
+      context: .
+      args:
+        USER_ID: ${USER_ID:-0}
+        GROUP_ID: ${GROUP_ID:-0}
+        NODE_ENV: development
+    volumes:
+      - ./src:/usr/app/src
+    ports:
+      - "127.0.0.1:6789:6789"
+    working_dir: /usr/app
+    command: npm start

@@ -1,6 +1,6 @@
 const path = require('path');
 const fs = require('fs');
-const libxmljs = require('libxmljs');
+const DOMParser = require('xmldom').DOMParser;
 
 const samplesDirectory = path.join(__dirname, 'samples');
 const samples = fs.readdirSync(samplesDirectory);
@@ -14,7 +14,13 @@ const fetchRandomSample = () => {
 
 const isValidXml = (text) => {
   try {
-    libxmljs.parseXml(text);
+    new DOMParser({
+      errorHandler: {
+        error: function (msg) {
+          throw new Error(msg);
+        }
+      }
+    }).parseFromString(text);
   } catch (e) {
     return false;
   }
