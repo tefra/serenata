@@ -1,4 +1,5 @@
 var net = require('net');
+var Header = require('./models/header.js').Header;
 var keyInfo = '<?xml version="1.0" encoding="UTF-8"?>' +
   '<sirena>' +
   '<query>' +
@@ -13,39 +14,13 @@ var keyInfo = '<?xml version="1.0" encoding="UTF-8"?>' +
   '</sirena>';
 
 var client = new net.Socket();
-client.connect(34322, '193.104.87.251', function () {
+client.connect(6789, 'localhost', function () {
 // client.connect(6789, 'localhost', function () {
-  console.log('Connected');
-  console.log('Message Length: ' + keyInfo.length);
-  const length = Buffer.alloc(4);
-  length.writeUInt32BE(keyInfo.length);
-  const created = Buffer.alloc(4);
-  console.log(Math.floor(Date.now() / 1000));
-  created.writeUInt32LE(Math.floor(Date.now() / 1000));
-  const messageId = Buffer.alloc(4);
-  messageId.writeUInt32BE(999)
-
-  const reserved = Buffer.alloc(32);
-  const customerId = Buffer.alloc(2);
-  customerId.writeUInt16BE(8153);
-  const flagOne = Buffer.alloc(1);
-  const flagTwo = Buffer.alloc(1);
-  const keyId = Buffer.alloc(4);
-  keyId.writeUInt32BE(444)
-  const suffix = Buffer.alloc(48);
-
-  const headers = Buffer.concat([
-    length, created, messageId,
-    reserved, customerId, flagOne,
-    flagTwo, keyId, suffix
-  ], 100);
-
+  const headers = new Header(keyInfo.length, 444, 8153, 444).getBytes();
   const request = Buffer.from(keyInfo);
-
-  const message = Buffer.concat([headers, request], headers.length + request.length);
+  const message = Buffer.concat([headers, request]);
 
   console.log(headers.toString('hex'));
-  // console.log(message.toString());
   client.write(message);
 });
 
